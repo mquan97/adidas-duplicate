@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cardContainer .heartIcon {
+  position: absolute;
+  top: 8%;
+  left: 85%;
+  text-align: center;
+}
+
+.cardContainer .shoe-price {
+  position: absolute;
+  top: 94%;
+  left: 5%;
+  padding: 5px;
+  background-color: white;
+}
