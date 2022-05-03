@@ -5,6 +5,7 @@ import { CardActionArea } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Stack from '@mui/material/Stack';
 import { useState, useEffect } from 'react';
 import 'animate.css';
 
@@ -15,12 +16,14 @@ const ShoeCard = () => {
         fetch('http://localhost:8000/shoe')
         .then(res => res.json())
         .then(data => setShoe(data))
-    }, [])
+    }, ['http://localhost:8000/shoe'])
 
     const toggleFavorite = () => {
         setShoe (preShoe => (
-            {...preShoe,
-            favorite: !preShoe.favorite}
+            preShoe.map(item => (
+                {...item,
+                    favorite: !item.favorite}
+            ))
         ))
     }
 
@@ -44,44 +47,39 @@ const ShoeCard = () => {
     return ( 
     <Card sx={{ maxWidth: 345 }}>
         {shoe.map(shoe => (
-            <CardActionArea key={shoe.id}>
-            <div className='cardContainer'>
-            {/* component="img"
-            height="330"
-            width="100%"
-            image="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0131c01669024f8a8ac4adf800b3f976_9366/NMD_R1_Shoes_White_GY6067_01_standard.jpg"
-            alt="NMD_R1" */}
-            <span className='heartIcon' onClick={toggleFavorite}>
-            {shoe.favorite? (
-                <FavoriteIcon />
-            ) : (
-                <FavoriteBorderIcon />
-            )}
-            </span>
-            <img src={shoe.image} 
-            height="100%"
-            width="100%"
-            alt="NMD_R1"
-            />
-            <div className='shoe-price'>
-                {shoe.price}
-            </div>
+                <CardActionArea key={shoe.id}>
+                    <div className='cardContainer'>
+                    {/* Favorite icon */}
+                    <span className='heartIcon' onClick={toggleFavorite}>
+                    {shoe.favorite? (
+                        <FavoriteIcon />
+                    ) : (
+                        <FavoriteBorderIcon />
+                    )}
+                    </span>
+                    <img src={shoe.image} 
+                    height="100%"
+                    width="100%"
+                    alt="NMD_R1"
+                    />
+                    <div className='shoe-price'>
+                        {shoe.price}
+                    </div>
 
-            </div>
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-                {shoe.name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-                {shoe.variant}
-            </Typography>
-            <Typography variant="body3" color="text.primary">
-                {shoe.condition}
-            </Typography>
-            </CardContent>
-        </CardActionArea>    
+                    </div>
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {shoe.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {shoe.variant}
+                    </Typography>
+                    <Typography variant="body3" color="text.primary">
+                        {shoe.condition}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea> 
         ))}
-      
     </Card>
     );
 }
