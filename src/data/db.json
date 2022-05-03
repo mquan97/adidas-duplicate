@@ -1,0 +1,33 @@
+{
+    "shoe": [
+        {   
+            "name": "NMD_R1 Shoes",
+            "variant": "Men Originals",
+            "condition": "new",
+            "price": "€ 170",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0131c01669024f8a8ac4adf800b3f976_9366/NMD_R1_Shoes_White_GY6067_01_standard.jpg",
+            "favorite": false,
+            "id": 1
+        },
+
+        {   
+            "name": "Disney Nizza Platform Shoes",
+            "variant": "Women Originals",
+            "condition": "only at adidas",
+            "price": "€ 80",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0ad2a140e2a47fea5a3ae1400160a65_9366/Disney_Nizza_Platform_Shoes_Pink_GV7943_01_standard.jpg",
+            "favorite": false,
+            "id": 2
+        },
+
+        {   
+            "name": "Forum Low Shoes",
+            "variant": "Men Originals",
+            "condition": "new",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f88bdbb8f061489a9e8fadfe011d45a2_9366/Forum_Low_Shoes_White_GV7613_01_standard.jpg",
+            "favorite": false,
+            "id": 3
+        }
+    ]
+}
