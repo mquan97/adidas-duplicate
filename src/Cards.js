@@ -11,6 +11,7 @@ import 'animate.css';
 
 const ShoeCard = () => {
     const [shoe, setShoe] = useState([])
+    const [editIndex, setEditIndex]= useState(null)
 
     useEffect(() => {
         fetch('http://localhost:8000/shoe')
@@ -18,13 +19,33 @@ const ShoeCard = () => {
         .then(data => setShoe(data))
     }, ['http://localhost:8000/shoe'])
 
-    const toggleFavorite = () => {
+    const toggleFavorite = (shoe) => {
+        //setEditIndex(editIndex => editIndex === index ? null : index)
+
+        // setShoe (preShoe => (
+        //     preShoe[editIndex] = 
+            
+        //     map(item => (
+        //         {...item,
+        //             favorite: !item.favorite}
+        //     ))
+        // ))
+
         setShoe (preShoe => (
-            preShoe.map(item => (
-                {...item,
-                    favorite: !item.favorite}
-            ))
-        ))
+            preShoe.map(item => {
+                if (item === shoe){
+                    item.favorite = !item.favorite
+                }
+                    return (
+                        {...item}
+                    )
+                    
+                }
+                
+            
+        )))
+        console.log(shoe)
+        
     }
 
     // let id = null;
@@ -46,12 +67,12 @@ const ShoeCard = () => {
 
     return ( 
     <Card sx={{ maxWidth: 345 }}>
-        {shoe.map(shoe => (
-                <CardActionArea key={shoe.id}>
+        {shoe.map((shoe, index) => (
+                <CardActionArea key={index}>
                     <div className='cardContainer'>
                     {/* Favorite icon */}
-                    <span className='heartIcon' onClick={toggleFavorite}>
-                    {shoe.favorite? (
+                    <span className='heartIcon' onClick={() => toggleFavorite(shoe)}>
+                    { shoe.favorite? (
                         <FavoriteIcon />
                     ) : (
                         <FavoriteBorderIcon />
