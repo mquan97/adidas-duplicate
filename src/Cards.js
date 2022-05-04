@@ -11,7 +11,6 @@ import 'animate.css';
 
 const ShoeCard = () => {
     const [shoe, setShoe] = useState([])
-    const [editIndex, setEditIndex]= useState(null)
 
     useEffect(() => {
         fetch('http://localhost:8000/shoe')
@@ -20,16 +19,6 @@ const ShoeCard = () => {
     }, ['http://localhost:8000/shoe'])
 
     const toggleFavorite = (shoe) => {
-        //setEditIndex(editIndex => editIndex === index ? null : index)
-
-        // setShoe (preShoe => (
-        //     preShoe[editIndex] = 
-            
-        //     map(item => (
-        //         {...item,
-        //             favorite: !item.favorite}
-        //     ))
-        // ))
 
         setShoe (preShoe => (
             preShoe.map(item => {
@@ -41,11 +30,8 @@ const ShoeCard = () => {
                     )
                     
                 }
-                
-            
-        )))
-        console.log(shoe)
-        
+            )
+        ))
     }
 
     // let id = null;
@@ -66,42 +52,52 @@ const ShoeCard = () => {
 
 
     return ( 
-    <Card sx={{ maxWidth: 345 }}>
-        {shoe.map((shoe, index) => (
-                <CardActionArea key={index}>
+    <Stack  direction="row" 
+            justifyContent="flex-start" 
+            alignItems="flex-start"
+            spacing={1}
+            
+    >
+    {shoe.map((shoe, index) => (
+    <Card sx={{ height: 300, width: 200 }}>
+        
+                <CardActionArea>
                     <div className='cardContainer'>
                     {/* Favorite icon */}
                     <span className='heartIcon' onClick={() => toggleFavorite(shoe)}>
                     { shoe.favorite? (
-                        <FavoriteIcon />
+                        <FavoriteIcon fontSize='90%'/>
                     ) : (
-                        <FavoriteBorderIcon />
+                        <FavoriteBorderIcon fontSize='90%'/>
                     )}
                     </span>
                     <img src={shoe.image} 
                     height="100%"
                     width="100%"
-                    alt="NMD_R1"
+                    alt={shoe.name}
                     />
                     <div className='shoe-price'>
                         {shoe.price}
                     </div>
 
                     </div>
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <CardContent className='cardContent'>
+                    <Typography gutterBottom variant="subtitle1" component="div" fontSize="80%">
                         {shoe.name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body1" color="text.secondary" fontSize="80%">
                         {shoe.variant}
                     </Typography>
-                    <Typography variant="body3" color="text.primary">
+                    <Typography variant="body2" color="text.primary" fontSize="80%">
                         {shoe.condition}
                     </Typography>
                     </CardContent>
-                </CardActionArea> 
-        ))}
+                </CardActionArea>
+        
+        
     </Card>
+    ))}
+    </Stack>
     );
 }
  

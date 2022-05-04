@@ -6,6 +6,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Container } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 import ShoeCard from './Cards';
 
@@ -53,26 +54,26 @@ export default function App() {
 
   return (
     <Container>
-    <Box sx={{ bgcolor: 'background.paper', width: 500 }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="inherit"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="New Arrivals" {...a11yProps(0)} />
-          <Tab label="Best of Adidas" {...a11yProps(1)} />
-        </Tabs>
+      <Box sx={{ bgcolor: 'background.paper', width: "100%" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="secondary"
+            textColor="inherit"
+          >
+            <Tab label="New Arrivals" {...a11yProps(0)} />
+            <Tab label="Best of Adidas" {...a11yProps(1)} />
+          </Tabs>
 
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <ShoeCard />
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          BEST BEST BEST
-        </TabPanel>
-    </Box>
+          <TabPanel value={value} index={0} dir={theme.direction}>
+            
+              <ShoeCard />
+            
+          </TabPanel>
+          <TabPanel value={value} index={1} dir={theme.direction}>
+            BEST BEST BEST
+          </TabPanel>
+      </Box>
 
     
 
