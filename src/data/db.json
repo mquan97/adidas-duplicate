@@ -11,7 +11,7 @@
         },
 
         {   
-            "name": "Disney Nizza Platform Shoes",
+            "name": "Disney Nizza Shoes",
             "variant": "Women Originals",
             "condition": "only at adidas",
             "price": "€ 80",
@@ -28,6 +28,26 @@
             "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f88bdbb8f061489a9e8fadfe011d45a2_9366/Forum_Low_Shoes_White_GV7613_01_standard.jpg",
             "favorite": false,
             "id": 3
+        },
+
+        {   
+            "name": "Forum Low Shoes",
+            "variant": "Women Originals",
+            "condition": "new",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd66d5d8c10f437180f0ae1300d4e318_9366/Forum_Low_Shoes_White_GY5919_01_standard.jpg",
+            "favorite": false,
+            "id": 4
+        },
+
+        {   
+            "name": "Gazelle Shoes",
+            "variant": "Men Originals",
+            "condition": "only at adidas",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
+            "favorite": false,
+            "id": 5
         }
     ]
 }
