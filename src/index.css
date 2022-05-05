@@ -30,7 +30,7 @@ code {
 
 .cardContainer .shoe-price {
   position: absolute;
-  top: 88%;
+  top: 85%;
   left: 5%;
   padding: 5px;
   background-color: white;
@@ -39,7 +39,7 @@ code {
 
 .cardContainer .shoe-priceUp {
   position: absolute;
-  top: 85%;
+  top: 80%;
   left: 5%;
   padding: 5px;
   background-color: white;
