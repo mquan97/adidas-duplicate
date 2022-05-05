@@ -21,6 +21,8 @@ const breakPoints = [
 const ShoeCard = () => {
     const [shoes, setShoes] = useState([])
 
+    const priceTagRef = useRef()
+
     useEffect(() => {
         fetch('http://localhost:8000/shoe')
         .then(res => res.json())
@@ -44,22 +46,11 @@ const ShoeCard = () => {
     }
 
 
-    // let id = null;
-    // const handleMouseEnter = () => {
-    //     let elem = document.querySelector("#shoe-price");   
-    //     let pos = 94
-    //     clearInterval(id);
-    //     id = setInterval(frame, 10);
-    //     function frame() {
-    //         if (pos == 80) {
-    //         clearInterval(id);
-    //         } else {
-    //         pos--; 
-    //         elem.style.bottom = pos + '%'; 
-    //         }
-    //     }
-    // }
+    const [isHover, setIsHover] = useState(-1)
 
+    const handleMouseEnter = (index) => {
+        setIsHover(index)
+    }
 
     return ( 
     <Stack  direction="row" 
@@ -70,7 +61,9 @@ const ShoeCard = () => {
     >
         <Carousel breakPoints={breakPoints}>
     {shoes.map((shoe, index) => (
-    <Card sx={{ height: 300, width: 200 }}>
+    <Card key={index}   onMouseEnter={() => handleMouseEnter(index)} 
+                        onMouseLeave={() => setIsHover(-1)}
+                        sx={{ height: 300, width: 200 }}>
         
                 <CardActionArea>
                     <div className='cardContainer'>
@@ -87,7 +80,8 @@ const ShoeCard = () => {
                     width="100%"
                     alt={shoe.name}
                     />
-                    <div className='shoe-price'>
+                    {/* shoe price */}
+                    <div ref={priceTagRef} className={`shoe-price${isHover === index? "Up" : ""}`}>
                         {shoe.price}
                     </div>
 

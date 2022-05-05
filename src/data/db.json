@@ -49,6 +49,7 @@
             "favorite": false,
             "id": 5
         },
+
         {   
             "name": "Gazelle Shoes",
             "variant": "Men Originals",
@@ -58,6 +59,7 @@
             "favorite": false,
             "id": 5
         },
+
         {   
             "name": "Gazelle Shoes",
             "variant": "Men Originals",
@@ -67,11 +69,42 @@
             "favorite": false,
             "id": 5
         },
+
+        {   
+            "name": "Disney Nizza Shoes",
+            "variant": "Women Originals",
+            "condition": "only at adidas",
+            "price": "€ 80",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0ad2a140e2a47fea5a3ae1400160a65_9366/Disney_Nizza_Platform_Shoes_Pink_GV7943_01_standard.jpg",
+            "favorite": false,
+            "id": 2
+        },
+        
+        {   
+            "name": "Disney Nizza Shoes",
+            "variant": "Women Originals",
+            "condition": "only at adidas",
+            "price": "€ 80",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0ad2a140e2a47fea5a3ae1400160a65_9366/Disney_Nizza_Platform_Shoes_Pink_GV7943_01_standard.jpg",
+            "favorite": false,
+            "id": 2
+        },
+        
+        {   
+            "name": "Disney Nizza Shoes",
+            "variant": "Women Originals",
+            "condition": "only at adidas",
+            "price": "€ 80",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0ad2a140e2a47fea5a3ae1400160a65_9366/Disney_Nizza_Platform_Shoes_Pink_GV7943_01_standard.jpg",
+            "favorite": false,
+            "id": 2
+        },
+        
         {   
             "name": "Gazelle Shoes",
             "variant": "Men Originals",
             "condition": "only at adidas",
-            "price": "€ 110",
+            "price": "€ 100",
             "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
             "favorite": false,
             "id": 5
