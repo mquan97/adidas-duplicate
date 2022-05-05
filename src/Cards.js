@@ -6,21 +6,30 @@ import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Stack from '@mui/material/Stack';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Carousel from "react-elastic-carousel";
+
 import 'animate.css';
 
+const breakPoints = [
+    { width: 1, itemsToShow: 1, itemsToScroll: 1 },
+    { width: 450, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 650, itemsToShow: 3, itemsToScroll: 3},
+    { width: 850, itemsToShow: 4, itemsToScroll: 4},
+  ];
+
 const ShoeCard = () => {
-    const [shoe, setShoe] = useState([])
+    const [shoes, setShoes] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:8000/shoe')
         .then(res => res.json())
-        .then(data => setShoe(data))
+        .then(data => setShoes(data))
     }, ['http://localhost:8000/shoe'])
 
     const toggleFavorite = (shoe) => {
 
-        setShoe (preShoe => (
+        setShoes (preShoe => (
             preShoe.map(item => {
                 if (item === shoe){
                     item.favorite = !item.favorite
@@ -33,6 +42,7 @@ const ShoeCard = () => {
             )
         ))
     }
+
 
     // let id = null;
     // const handleMouseEnter = () => {
@@ -56,9 +66,10 @@ const ShoeCard = () => {
             justifyContent="flex-start" 
             alignItems="flex-start"
             spacing={1}
-            
+
     >
-    {shoe.map((shoe, index) => (
+        <Carousel breakPoints={breakPoints}>
+    {shoes.map((shoe, index) => (
     <Card sx={{ height: 300, width: 200 }}>
         
                 <CardActionArea>
@@ -97,6 +108,7 @@ const ShoeCard = () => {
         
     </Card>
     ))}
+    </Carousel>
     </Stack>
     );
 }

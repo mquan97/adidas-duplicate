@@ -8,7 +8,11 @@ import Box from '@mui/material/Box';
 import { Container } from '@mui/material';
 import Stack from '@mui/material/Stack';
 
+
+
 import ShoeCard from './Cards';
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,6 +51,8 @@ export default function App() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
+ 
+
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
@@ -68,6 +74,7 @@ export default function App() {
           <TabPanel value={value} index={0} dir={theme.direction}>
             
               <ShoeCard />
+              
             
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>

@@ -48,6 +48,33 @@
             "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
             "favorite": false,
             "id": 5
+        },
+        {   
+            "name": "Gazelle Shoes",
+            "variant": "Men Originals",
+            "condition": "only at adidas",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
+            "favorite": false,
+            "id": 5
+        },
+        {   
+            "name": "Gazelle Shoes",
+            "variant": "Men Originals",
+            "condition": "only at adidas",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
+            "favorite": false,
+            "id": 5
+        },
+        {   
+            "name": "Gazelle Shoes",
+            "variant": "Men Originals",
+            "condition": "only at adidas",
+            "price": "€ 110",
+            "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1d50c5f4504244bfae51ade5010e3aaf_9366/Gazelle_Shoes_Green_GZ4354_01_standard.jpg",
+            "favorite": false,
+            "id": 5
         }
     ]
 }
