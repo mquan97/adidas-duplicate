@@ -1,89 +1,43 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
+// React
+import React, { useState } from 'react';
+// Material UI
 import Box from '@mui/material/Box';
-import { Container } from '@mui/material';
-import Stack from '@mui/material/Stack';
-
-
-
+import Container from '@mui/material/Container';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+// Internal files
 import ShoeCard from './Cards';
 
 
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
-  };
-}
-
 export default function App() {
-  const theme = useTheme();
-  const [value, setValue] = React.useState(0);
-
- 
+  // Declaring the state
+  const [value, setValue] = useState('1');
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
 
-
   return (
     <Container>
-      <Box sx={{ bgcolor: 'background.paper', width: "100%" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="secondary"
-            textColor="inherit"
-          >
-            <Tab label="New Arrivals" {...a11yProps(0)} />
-            <Tab label="Best of Adidas" {...a11yProps(1)} />
-          </Tabs>
-
-          <TabPanel value={value} index={0} dir={theme.direction}>
-            
-              <ShoeCard />
-              
-            
-          </TabPanel>
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            BEST BEST BEST
-          </TabPanel>
+      <Box sx={{ width: '100%', typography: 'body1' }}>
+        <TabContext value={value}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <TabList 
+              value={value}
+              onChange={handleChange} 
+              indicatorColor='secondary'
+              textColor='inherit'
+            >
+              <Tab label='New Arrivals' value='1' />
+              <Tab label='Best of Adidas' value='2' />
+            </TabList>
+          </Box>
+          <TabPanel value='1'><ShoeCard /></TabPanel>
+          <TabPanel value='2'>BEST BEST BEST</TabPanel>
+        </TabContext>
       </Box>
-
-    
-
     </Container>
-  );
+  )
 }
