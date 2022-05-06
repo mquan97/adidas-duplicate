@@ -22,6 +22,9 @@ const ShoeCard = () => {
         fetch('http://localhost:8000/shoe')
         .then(res => res.json())
         .then(data => setShoes(data))
+        .catch(error => {
+            console.error('Error: ', error)
+        })
     }, ['http://localhost:8000/shoe'])
 
     // Like button
